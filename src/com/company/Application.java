@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.operations.Add;
+import com.company.operations.Divide;
 import com.company.operations.Multiply;
 import com.company.operations.Subtract;
 
@@ -27,6 +28,11 @@ public class Application {
                 Multiply multiplyOpperation = new Multiply(LocalDateTime.now());
                 result = multiplyOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
                 System.out.println("Result of multiply: " + result);
+                break;
+            case "/":
+                Divide divideOpperation = new Divide(LocalDateTime.now());
+                result = divideOpperation.calculate(Integer.valueOf(a),Integer.valueOf(b));
+                System.out.println("Result of divide: " + result);
                 break;
             default:
                 System.out.println("default");

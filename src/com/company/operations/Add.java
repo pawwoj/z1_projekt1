@@ -12,6 +12,7 @@ public class Add implements Operation{
     @Override
     public Integer calculate(Integer a, Integer b) {
         System.out.println("Time of operation: " + this.timeOfOperation);
+
         return a + b;
     }
 }
