@@ -8,31 +8,63 @@ import com.company.operations.Subtract;
 import java.time.LocalDateTime;
 
 public class Application {
+
+    public static boolean isInt(String a) {
+        try {
+            Integer.parseInt(a);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
     public static void run(String operation, String a, String b) {
         System.out.println("Operation: " + operation + " a:" + a + " b:" + b);
         int result;
+        double result2;
 
         switch (operation) {
             case "+":
                 Add addOperation = new Add(LocalDateTime.now());
                 // Integer result = addOperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
-                result = addOperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
-                System.out.println("Result: " + result);
+                if (isInt(a) && isInt(b)) {
+                    result = addOperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                    System.out.println("Result: " + result);
+                } else {
+                    result2 = addOperation.calculate(Double.valueOf(a), Double.valueOf(b));
+                    System.out.println("Result: " + result2);
+                }
                 break;
             case "-":
+
                 Subtract subtractOperration = new Subtract(LocalDateTime.now());
-                result = subtractOperration.calculate(Integer.valueOf(a), Integer.valueOf(b));
-                System.out.println("Result: " + result);
+                if (isInt(a) && isInt(b)) {
+                    result = subtractOperration.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                    System.out.println("Result: " + result);
+                } else {
+                    result2 = subtractOperration.calculate(Double.valueOf(a), Double.valueOf(b));
+                    System.out.println("Result: " + result2);
+                }
                 break;
             case "*":
                 Multiply multiplyOpperation = new Multiply(LocalDateTime.now());
-                result = multiplyOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
-                System.out.println("Result of multiply: " + result);
+                if (isInt(a) && isInt(b)) {
+                    result = multiplyOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                    System.out.println("Result of multiply: " + result);
+                } else {
+                    result2 = multiplyOpperation.calculate(Double.valueOf(a), Double.valueOf(b));
+                    System.out.println("Result: " + result2);
+                }
                 break;
             case "/":
                 Divide divideOpperation = new Divide(LocalDateTime.now());
-                result = divideOpperation.calculate(Integer.valueOf(a),Integer.valueOf(b));
-                System.out.println("Result of divide: " + result);
+                if (isInt(a) && isInt(b)) {
+                    result = divideOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                    System.out.println("Result: " + result);
+                } else {
+                    result2 = divideOpperation.calculate(Double.valueOf(a), Double.valueOf(b));
+                    System.out.println("Result: " + result2);
+                }
                 break;
             default:
                 System.out.println("default");

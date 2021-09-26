@@ -14,4 +14,10 @@ public class Multiply implements Operation {
         System.out.println("Time of operation: " + this.timeOfOperation);
         return a * b;
     }
+
+    @Override
+    public Double calculate(Double a, Double b) {
+        System.out.println("Time of operation: " + this.timeOfOperation);
+        return a * b;
+    }
 }

@@ -2,22 +2,36 @@ package com.company.operations;
 
 import java.time.LocalDateTime;
 
-public class Divide implements Operation{
+public class Divide implements Operation {
 
-    private LocalDateTime localDateTime;
+    private final LocalDateTime timeOfOperation;
 
-    public  Divide(LocalDateTime localDateTime){
-        this.localDateTime = localDateTime;
+
+    public Divide(LocalDateTime localDateTime) {
+        this.timeOfOperation = localDateTime;
     }
+
     @Override
     public Integer calculate(Integer a, Integer b) {
-        System.out.println("Time of operation: " + this.localDateTime);
-        int c =0;
+        System.out.println("Time of operation: " + this.timeOfOperation);
+        int c = 0;
         try {
             c = a / b;
         } catch (Exception e) {
             System.out.println(e);
         }
-return c;
+        return c;
+    }
+
+    @Override
+    public Double calculate(Double a, Double b) {
+        System.out.println("Time of operation: " + this.timeOfOperation);
+        double c = 0;
+        try {
+            c = a / b;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return c;
     }
 }
