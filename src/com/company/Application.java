@@ -13,6 +13,7 @@ public class Application {
         switch (operation) {
             case "+":
                 Add addOperation = new Add(LocalDateTime.now());
+                // Integer result = addOperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
                 result = addOperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
                 System.out.println("Result: " + result);
                 break;
