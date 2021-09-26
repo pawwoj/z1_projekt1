@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.operations.Add;
+import com.company.operations.Multiply;
 import com.company.operations.Subtract;
 
 import java.time.LocalDateTime;
@@ -18,9 +19,14 @@ public class Application {
                 System.out.println("Result: " + result);
                 break;
             case "-":
-                Subtract subtractOperration = new Subtract((LocalDateTime.now()));
+                Subtract subtractOperration = new Subtract(LocalDateTime.now());
                 result = subtractOperration.calculate(Integer.valueOf(a), Integer.valueOf(b));
                 System.out.println("Result: " + result);
+                break;
+            case "*":
+                Multiply multiplyOpperation = new Multiply(LocalDateTime.now());
+                result = multiplyOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                System.out.println("Result of multiply: " + result);
                 break;
             default:
                 System.out.println("default");
