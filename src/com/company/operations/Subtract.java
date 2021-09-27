@@ -20,6 +20,4 @@ public class Subtract implements Operation {
         System.out.println("Time of operation:" + this.timeOfOperation);
         return a - b;
     }
-
-
 }
