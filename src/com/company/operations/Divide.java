@@ -14,24 +14,26 @@ public class Divide implements Operation {
     @Override
     public Integer calculate(Integer a, Integer b) {
         System.out.println("Time of operation: " + this.timeOfOperation);
-        int c = 0;
-        try {
-            c = a / b;
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return c;
+//        int c = 0;
+//        try {
+//            c = a / b;
+//        } catch (Exception e) {
+//      //      System.out.println(e);
+//            e.printStackTrace();
+//        }
+        return a / b;
     }
 
     @Override
     public Double calculate(Double a, Double b) {
         System.out.println("Time of operation: " + this.timeOfOperation);
-        double c = 0;
-        try {
-            c = a / b;
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return c;
+//        double c = 0;
+//        try {
+//            c = a / b;
+//        } catch (Exception e) {
+//            System.out.println(e);
+//            e.printStackTrace();
+//        }
+        return a / b;
     }
 }

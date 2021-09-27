@@ -57,13 +57,18 @@ public class Application {
                 }
                 break;
             case "/":
-                Divide divideOpperation = new Divide(LocalDateTime.now());
-                if (isInt(a) && isInt(b)) {
-                    result = divideOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
-                    System.out.println("Result: " + result);
-                } else {
-                    result2 = divideOpperation.calculate(Double.valueOf(a), Double.valueOf(b));
-                    System.out.println("Result: " + result2);
+                if ((isInt(b) && Integer.valueOf(b)!=0) || (!isInt(b) && Double.valueOf(b)!=0.00)) {
+                    Divide divideOpperation = new Divide(LocalDateTime.now());
+                    if (isInt(a) && isInt(b)) {
+                        result = divideOpperation.calculate(Integer.valueOf(a), Integer.valueOf(b));
+                        System.out.println("Result: " + result);
+                    } else {
+                        result2 = divideOpperation.calculate(Double.valueOf(a), Double.valueOf(b));
+                        System.out.println("Result: " + result2);
+                    }
+                }
+                else{
+                    System.out.println("Nie można dzielić przez 0");
                 }
                 break;
             default:
